@@ -52,7 +52,7 @@ aceest_fitness_sayan/
    ```bash
    python app.py
    ```
-   Open `http://127.0.0.1:5000` in a web browser to access the UI.
+   Open `http://127.0.0.1:5173` in a web browser to access the UI.
 
 ## Running Tests Locally
 1. **Install Testing Dependencies**:
@@ -81,14 +81,14 @@ Check the **Actions** tab in the GitHub repository to view workflow runs.
 
 2. **Run the Container**:
    ```bash
-   docker run -p 5000:5000 aceest-fitness
+   docker run -p 5173:5173 aceest-fitness
    ```
-   Access the app at `http://127.0.0.1:5000`.
+   Access the app at `http://127.0.0.1:5173`.
 
 ## Troubleshooting
 - **TemplateNotFound Error**: Ensure `index.html` is in the `templates/` folder.
 - **500 Internal Server Error**: Check the terminal for stack traces and verify `app.py` and `index.html` match the provided code.
-- **Connection Issues**: Ensure port 5000 is open (e.g., check firewall settings) and try `http://127.0.0.1:5000`.
+- **Connection Issues**: Ensure port 5173 is open (e.g., check firewall settings) and try `http://127.0.0.1:5173`.
 
 ## License
 MIT License
