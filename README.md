@@ -3,6 +3,24 @@
 A Flask-based web application for tracking workouts, built for the Introduction to DevOps Assignment by Sayan Pramanick. 
 The app allows users to add, view, and delete workouts, with automated testing and containerization using Pytest, Docker, and GitHub Actions.
 
+
+## 🚀 Live Demo
+You can check out the live version of the app here:  
+👉 [https://aceest-fitness-sayan.onrender.com](https://aceest-fitness-sayan.onrender.com)
+
+
+## 🛠️ Tech Stack
+- **Flask** (Python web framework)
+- **Docker** (Containerization)
+- **GitHub Actions** (CI/CD pipeline for testing)
+- **pytest** (Unit testing)
+- **Render** (Cloud hosting platform)
+
+## 🔥 Deployment Notes
+This application is deployed using **Render’s Docker-based deployment**.  
+The `Dockerfile` defines a lightweight container image (using `python:3.13-slim`) that is automatically built and deployed whenever changes are pushed to this repository.
+
+
 ## Features
 - Add workouts with name, duration (minutes), and timestamp.
 - View workouts in a table with total duration.
