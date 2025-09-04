@@ -27,7 +27,7 @@ aceest_fitness_sayan/
 ## Setup and Running Locally
 1. **Ensure Python is Installed:Verify that Python 3.13 or later is installed on your system:**:
    ```bash
-   python --version
+   python --version  # or python3 --version
    ```
    If Python is not installed, download and install it from python.org. Ensure python is added to your system's PATH.
 
@@ -39,7 +39,7 @@ aceest_fitness_sayan/
 
 3. **Set Up a Virtual Environment**:
    ```bash
-   python -m venv venv
+   python -m venv venv       # or python3 -m venv venv
    source venv/bin/activate  # On Windows: venv\Scripts\activate
    ```
 
@@ -50,7 +50,7 @@ aceest_fitness_sayan/
 
 5. **Run the Application**:
    ```bash
-   python app.py
+   python app.py # or python3 app.py
    ```
    Open `http://127.0.0.1:5173` in a web browser to access the UI.
 
