@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ACEest Fitness and Gym</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #26a69a;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: inline-block;
+            width: 120px;
+            color: #263238;
+        }
+
+        input[type="text"],
+        input[type="number"] {
+            padding: 8px;
+            width: 200px;
+            border: 1px solid #b0bec5;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #546e7a;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4db6ac;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #b0bec5;
+        }
+
+        th {
+            background-color: #b0bec5;
+            color: #26a69a;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fafafa;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #e0f2f1;
+        }
+
+        .flash-message {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .flash-message.error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .flash-message.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .total {
+            font-style: italic;
+            color: #26a69a;
+            margin-top: 10px;
+        }
+
+        .delete-link {
+            color: #ff5252;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🏋️‍♂️ ACEest Fitness and Gym 🏋️‍♂️</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="flash-message {{ category }}">{{ message }}</div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <form method="POST" action="{{ url_for('add_workout') }}">
+            <div class="form-group">
+                <label for="workout">Workout:</label>
+                <input type="text" id="workout" name="workout" placeholder="e.g., Running">
+            </div>
+            <div class="form-group">
+                <label for="duration">Duration (min):</label>
+                <input type="number" id="duration" name="duration" placeholder="e.g., 30">
+            </div>
+            <button type="submit">Add Workout</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Workout Name</th>
+                    <th>Duration (min)</th>
+                    <th>Timestamp</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for workout in workouts %}
+                <tr>
+                    <td>{{ workout.workout }}</td>
+                    <td>{{ workout.duration }}</td>
+                    <td>{{ workout.timestamp }}</td>
+                    <td><a class="delete-link" href="{{ url_for('delete_workout', index=loop.index0) }}">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="total">Total Duration: {{ total_duration }} minutes</div>
+    </div>
+</body>
+
+</html>

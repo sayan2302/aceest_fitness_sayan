@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtual Environment
+venv/
+.env/
+
+# Pytest cache
+.pytest_cache/
+
+# VSCode / IDE settings
+.vscode/
+.idea/
+
+# Docker
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Coverage
+htmlcov/
+.coverage
