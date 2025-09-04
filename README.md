@@ -11,7 +11,7 @@ The app allows users to add, view, and delete workouts, with automated testing a
 
 ## Project Structure
 ```
-acest_fitness/
+aceest_fitness_sayan/
 ├── app.py              # Flask application
 ├── templates/
 │   └── index.html      # HTML template for the UI
@@ -34,7 +34,7 @@ acest_fitness/
 2. **Clone the Repository**:
    ```bash
    git clone https://github.com/sayan2302/aceest_fitness_sayan.git
-   cd acest_fitness
+   cd aceest_fitness_sayan
    ```
 
 3. **Set Up a Virtual Environment**:
