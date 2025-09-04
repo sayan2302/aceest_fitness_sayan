@@ -74,10 +74,16 @@ The pipeline (`.github/workflows/main.yml`) runs on every push or pull request t
 Check the **Actions** tab in the GitHub repository to view workflow runs.
 
 ## Running with Docker
-1. **Build the Docker Image**:
+1. **Build the Docker Image**:  
    ```bash
    docker build -t aceest-fitness .
    ```
+   
+   If ERROR Occurs :- 
+   ```bash
+   Error during connect:The system cannot find the file specified.
+   ```
+   Try Starting Docker desktop manually then try again
 
 2. **Run the Container**:
    ```bash
